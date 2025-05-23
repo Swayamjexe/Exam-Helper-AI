@@ -229,6 +229,17 @@ import MenuIcon from '@mui/icons-material/Menu'
 - **Cross-Platform Mobile Application:** Native mobile experience for iOS and Android to enable learning on-the-go
 - **Enhanced Test Statistics and Analytics:** Comprehensive performance metrics with visual dashboards to track progress and identify learning patterns
 
+## Application Screenshots
+![Dashboard](https://postimg.cc/0rcpfJ99)
+![Study Materials](https://example.com/image.png)
+![Adding a Material](https://example.com/image.png)
+![Tests & Quizzes](https://example.com/image.png)
+![Statistics](https://example.com/image.png)
+![Creating a Test](https://example.com/image.png)
+![Attempting Test 1](https://example.com/image.png)
+![Attempting Test 2](https://example.com/image.png)
+![Test Results](https://example.com/image.png)
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
