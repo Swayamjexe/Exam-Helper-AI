@@ -1,15 +1,15 @@
 # Exam Helper AI
 
-A web application that helps students prepare for exams by using AI to generate custom tests based on their study materials. Users can upload reference books, notes, and previous year question papers, then create customized tests to check their progress.
+A sophisticated web application designed to enhance exam preparation through AI-powered test generation. Exam Helper AI enables students to upload their study materials and receive customized tests tailored to their learning needs, helping them assess their understanding and identify areas for improvement.
 
 ## Features
 
-- **User Authentication:** Secure login and registration system
-- **Material Management:** Upload and organize study materials
-- **AI-Powered Test Generation:** Create tests based on your materials
-- **Multiple Question Types:** Support for MCQs, short-answer, and long-answer questions
-- **Intelligent Evaluation:** AI-powered assessment of responses
-- **Performance Analytics:** Identify strengths and weaknesses
+- **Secure User Authentication:** Robust login and registration system with JWT protection
+- **Comprehensive Material Management:** Upload, organize, and access study materials efficiently
+- **AI-Powered Test Generation:** Create personalized tests based on uploaded learning materials
+- **Versatile Question Types:** Support for multiple-choice, short-answer, and long-answer questions
+- **Intelligent Evaluation:** AI-powered assessment of student responses
+- **Detailed Performance Analytics:** Comprehensive insights to identify knowledge gaps and strengths
 
 ## Tech Stack
 
@@ -223,11 +223,11 @@ import MenuIcon from '@mui/icons-material/Menu'
 
 ## Future Enhancements
 
-- **Text Extraction:** Improve extraction from PDFs and images
-- **Mobile App:** Develop companion mobile application
-- **Real-time Collaboration:** Allow students to study together
-- **Custom Test Templates:** Save and reuse test configurations
-- **Spaced Repetition:** Intelligently schedule review of weak areas
+- **AI-Powered Text Answer Grading:** Implementation of advanced NLP algorithms to evaluate and provide feedback on free-text responses
+- **Intelligent Text Extraction:** Enhanced capabilities to extract and process text from various study materials including images, PDFs, and handwritten notes
+- **Real-time Collaboration:** Integrated tools that enable students to study together, share materials, and engage in group test preparation
+- **Cross-Platform Mobile Application:** Native mobile experience for iOS and Android to enable learning on-the-go
+- **Enhanced Test Statistics and Analytics:** Comprehensive performance metrics with visual dashboards to track progress and identify learning patterns
 
 ## License
 
