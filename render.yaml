@@ -37,7 +37,7 @@ services:
   - type: web
     name: exam-helper-frontend
     env: static
-    region: oregon # Change to your preferred region
+    # Static sites don't support region selection
     buildCommand: |
       cd frontend
       npm install
@@ -52,12 +52,9 @@ services:
         source: /*
         destination: /index.html
     envVars:
-      # This dynamically sets the API URL to point to your backend service
+      # This sets the API URL to point to your backend service
       - key: REACT_APP_API_URL
-        fromService:
-          name: exam-helper-api
-          type: web
-          property: url
+        value: https://exam-helper-api.onrender.com
 
   # Celery Worker for Background Tasks
   - type: worker
@@ -87,7 +84,7 @@ services:
     name: exam-helper-redis
     region: oregon
     plan: free # Change for production
-    # Redis automatically restricts access to internal services only
+    ipAllowList: ["0.0.0.0/0"] # Allow connections from all services
 
 databases:
   # PostgreSQL Database (recommended for production)
