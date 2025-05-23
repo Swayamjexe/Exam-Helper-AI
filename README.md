@@ -230,15 +230,34 @@ import MenuIcon from '@mui/icons-material/Menu'
 - **Enhanced Test Statistics and Analytics:** Comprehensive performance metrics with visual dashboards to track progress and identify learning patterns
 
 ## Application Screenshots
-![Dashboard](https://postimg.cc/0rcpfJ99)
-![Study Materials](https://example.com/image.png)
-![Adding a Material](https://example.com/image.png)
-![Tests & Quizzes](https://example.com/image.png)
-![Statistics](https://example.com/image.png)
-![Creating a Test](https://example.com/image.png)
-![Attempting Test 1](https://example.com/image.png)
-![Attempting Test 2](https://example.com/image.png)
-![Test Results](https://example.com/image.png)
+### Dashboard
+
+![Dashboard](https://github.com/user-attachments/assets/e2758743-27bf-41f9-88da-4b8c333dd852)
+
+### Study Materials
+![Study Materials](https://github.com/user-attachments/assets/f1ae1f60-a72d-49be-b243-844391d903cf)
+
+### Adding a Material
+![add_material](https://github.com/user-attachments/assets/4e0c9b30-ee85-49a4-8f68-ed89ddfd203a)
+
+### Tests & Quizzes
+![tests_quizzes](https://github.com/user-attachments/assets/f01dbaba-aa3f-4623-b412-27d2a6f2b9b5)
+
+### Statistics
+![stats](https://github.com/user-attachments/assets/ce22fcf1-73b0-49dd-91b2-681e5f7eaff5)
+
+### Creating a Test
+![create_test](https://github.com/user-attachments/assets/6aa66b3c-43eb-4d39-bb25-882f3a993ac3)
+
+### Attempting Test 1
+![attempt_test_1](https://github.com/user-attachments/assets/ecb68ac1-261a-4612-9406-8f481a28bc73)
+
+### Attempting Test 2
+![attempt_test_2](https://github.com/user-attachments/assets/5c57e34f-8ca5-4488-ae5d-9fb14d70a181)
+
+### Test Results
+![results](https://github.com/user-attachments/assets/0efbada5-770a-45f6-9b21-70a318eaa46e)
+
 
 ## License
 
