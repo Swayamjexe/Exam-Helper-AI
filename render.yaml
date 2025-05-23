@@ -82,19 +82,18 @@ services:
           property: connectionString
       - fromGroup: exam-helper-secrets
 
-databases:
-  # PostgreSQL Database (recommended for production)
-  - name: exam-helper-db
-    region: oregon
-    plan: free # Change to a paid plan for production
-
-services:
   # Redis service for Celery task queue
   - type: redis
     name: exam-helper-redis
     region: oregon
     plan: free # Change for production
     ipAllowlist: [] # Only allow internal connections
+
+databases:
+  # PostgreSQL Database (recommended for production)
+  - name: exam-helper-db
+    region: oregon
+    plan: free # Change to a paid plan for production
 
 # Environment Variable Groups
 envVarGroups:
