@@ -1,4 +1,4 @@
-# Exam Helper
+# Exam Helper AI
 
 A web application that helps students prepare for exams by using AI to generate custom tests based on their study materials. Users can upload reference books, notes, and previous year question papers, then create customized tests to check their progress.
 
@@ -18,7 +18,7 @@ A web application that helps students prepare for exams by using AI to generate 
 - **Database:** SQLAlchemy with SQLite
 - **Authentication:** JWT (JSON Web Tokens)
 - **Vector Database:** ChromaDB
-- **LLM Integration:** Together AI (optional)
+- **LLM Integration:** Together AI
 
 ### Frontend
 - **Framework:** React with TypeScript
@@ -61,7 +61,7 @@ source venv/bin/activate
 
 4. Install basic dependencies:
 ```bash
-pip install Flask==2.3.3 Flask-RESTful==0.3.10 Flask-SQLAlchemy==3.1.1 Flask-Migrate==4.0.5 Flask-CORS==4.0.0 Flask-JWT-Extended==4.5.3 python-dotenv==1.0.0 requests==2.31.0 PyJWT==2.10.1 cryptography==42.0.5 pdfminer.six==20221105 python-docx==1.0.1 werkzeug==2.3.7
+pip install -r requirements.txt
 ```
 
 5. Initialize the database:
