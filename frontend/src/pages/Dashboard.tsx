@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Box,
@@ -18,19 +18,56 @@ import QuizIcon from '@mui/icons-material/Quiz';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import Layout from '../components/Layout';
 import { AuthContext } from '../context/AuthContext';
+import api from '../services/api';
 
 const Dashboard: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-
-  // These would come from API calls in a real app
-  const stats = {
+  const [stats, setStats] = useState({
     materials: 0,
     tests: 0,
     completedTests: 0,
     averageScore: 0,
-  };
+  });
+  
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        // Fetch materials count
+        const materialsResponse = await api.get('/api/materials');
+        const materials = materialsResponse.data.materials || [];
+        
+        // Fetch tests and test attempts
+        const testsResponse = await api.get('/api/tests');
+        const tests = testsResponse.data.tests || [];
+        
+        // Fetch test statistics using the same endpoint as TestsPage
+        let completedTests = 0;
+        let averageScore = 0;
+        
+        try {
+          const statsResponse = await api.get('/api/tests/statistics');
+          // Map the fields correctly from the API response
+          completedTests = statsResponse.data.total_tests || 0;
+          averageScore = statsResponse.data.average_score || 0;
+        } catch (error) {
+          console.error('Error fetching statistics:', error);
+        }
+        
+        setStats({
+          materials: materials.length,
+          tests: tests.length,
+          completedTests,
+          averageScore,
+        });
+      } catch (error) {
+        console.error('Error fetching dashboard statistics:', error);
+      }
+    };
+    
+    fetchStats();
+  }, []);
 
   // Fix the type definition for the StatCard component
   interface StatCardProps {
@@ -122,7 +159,7 @@ const Dashboard: React.FC = () => {
             <Grid item xs={12} sm={6} md={3}>
               <StatCard
                 title="Average Score"
-                value={`${stats.averageScore}%`}
+                value={`${stats.averageScore.toFixed(1)}%`}
                 icon={<AssessmentIcon />}
                 color="#c400ff"
               />
