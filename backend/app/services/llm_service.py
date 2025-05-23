@@ -146,13 +146,15 @@ def evaluate_test(question_data):
             q_text += "Score: Needs evaluation\n"
         
         questions_text.append(q_text)
+
+    questions_block = "\n\n".join(questions_text)
     
     # Create prompt for evaluation
     prompt = f"""
 You are an expert educational evaluator. Assess the following test answers and provide feedback.
 
 Test Details:
-{"\n\n".join(questions_text)}
+{questions_block}
 
 For non-MCQ questions, evaluate the student's answer against the correct answer.
 Determine if each answer is correct, partially correct, or incorrect.

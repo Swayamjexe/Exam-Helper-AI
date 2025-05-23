@@ -5,16 +5,29 @@ from sentence_transformers import SentenceTransformer
 
 class VectorService:
     def __init__(self):
-        # Initialize ChromaDB client
-        persist_directory = os.environ.get("CHROMA_PERSIST_DIR", "chroma_db")
+        # Check if running on Render platform and use in-memory storage
+        is_render = os.environ.get("RENDER", "false").lower() == "true"
+        persist_directory = os.environ.get("CHROMA_DB_PATH", os.environ.get("CHROMA_PERSIST_DIR", "chroma_db"))
+        
         try:
-            self.client = chromadb.PersistentClient(path=persist_directory)
+            if is_render:
+                # Use in-memory storage on Render to avoid persistence issues
+                print("Running on Render platform. Using in-memory ChromaDB.")
+                self.client = chromadb.Client()
+            else:
+                # Use persistent storage for local development
+                print(f"Using persistent ChromaDB at {persist_directory}")
+                self.client = chromadb.PersistentClient(path=persist_directory)
         except Exception as e:
             print(f"Error initializing ChromaDB client: {str(e)}")
-            # Create a directory if it doesn't exist
-            os.makedirs(persist_directory, exist_ok=True)
-            # Try again
-            self.client = chromadb.PersistentClient(path=persist_directory)
+            # Create a directory if it doesn't exist and we're not on Render
+            if not is_render:
+                os.makedirs(persist_directory, exist_ok=True)
+                # Try again with persistent storage
+                self.client = chromadb.PersistentClient(path=persist_directory)
+            else:
+                # Fall back to in-memory for Render
+                self.client = chromadb.Client()
         
         # Initialize sentence transformer model
         try:
