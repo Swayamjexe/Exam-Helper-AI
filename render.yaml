@@ -87,7 +87,7 @@ services:
     name: exam-helper-redis
     region: oregon
     plan: free # Change for production
-    ipAllowlist: [] # Only allow internal connections
+    # Redis automatically restricts access to internal services only
 
 databases:
   # PostgreSQL Database (recommended for production)
